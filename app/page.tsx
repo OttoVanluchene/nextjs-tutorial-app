@@ -2,6 +2,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { lusitana } from './ui/fonts';
 import AcmeLogo from './ui/acme-logo';
+import Image from 'next/image';
 
 export default function Page() {
   return (
@@ -12,8 +13,8 @@ export default function Page() {
       <div className="flex md:flex-row flex-col gap-4 mt-4 grow">
         <div className="flex flex-col justify-center gap-6 bg-gray-50 px-6 md:px-20 py-10 rounded-lg md:w-2/5">
           <div
-              className="relative border-r-[15px] border-r-transparent border-b-[26px] border-b-black border-l-[15px] border-l-transparent w-0 h-0"
-            />
+            className="relative border-r-[15px] border-r-transparent border-b-[26px] border-b-black border-l-[15px] border-l-transparent w-0 h-0"
+          />
           <p className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
             <strong>Welcome to Acme.</strong> This is the example for the{' '}
             <a href="https://nextjs.org/learn/" className="text-blue-500">
@@ -29,7 +30,20 @@ export default function Page() {
           </Link>
         </div>
         <div className="flex justify-center items-center p-6 md:px-28 md:py-12 md:w-3/5">
-          {/* Add Hero Images Here */}
+          <Image
+            src="/hero-desktop.png"
+            width={1000}
+            height={760}
+            className="hidden md:block"
+            alt="Screenshots of the dashboard project showing desktop version"
+          />
+          <Image
+            src="/hero-mobile.png"
+            width={560}
+            height={620}
+            className="md:hidden"
+            alt="Screenshots of the dashboard project showing mobile version"
+          />
         </div>
       </div>
     </main>
